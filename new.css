@@ -1,0 +1,64 @@
+html{
+    scroll-behavior: smooth;
+     }
+    
+
+.form4 {
+    background-color: rgb(191, 196, 202);
+    background-size: cover
+}
+
+.top {
+    padding-top: 20px;
+    padding-bottom: 100px
+}
+
+.form-bg {
+    background: rgb(191, 196, 202);
+    padding: 10px
+}
+
+.form {
+    background-color: rgb(191, 196, 202) ;
+    padding: 10px
+}
+
+.form-group {
+    margin-bottom: 10px
+}
+
+
+.btn-blue {
+    background-color: #4285f4;
+    color: #fff;
+    border: 1px solid #4285f4
+}
+ 
+.fa-facebook {
+    
+    color: white;
+    
+    
+  }
+
+  .fa-twitter {
+
+    color: white;
+  }
+
+  
+.fa-instagram {
+  
+    color: white;
+  }
+
+
+  .fa-linkedin {
+  
+    color: white;
+  }
+
+  .services{
+      width: min-content;
+  }
+  
