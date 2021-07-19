@@ -3,7 +3,7 @@ var name1, msg, ph, mail;
 function nameValidation() {
   var name = document.getElementById("nametext").value
   var namespan = document.getElementById("namespan");
-  var letters = /^[a-zA-Z\s]*$/;
+  var letters =  /^[a-zA-Z]+\s*$/;
   if (name == "") {
       namespan.innerHTML = "Field is required"
       name1= false;
