@@ -25,23 +25,23 @@ function phoneValidation(){
     
     if(phone==""){
         phonespan.innerHTML="Filed is required"
-        return false;}
+        ph =false;}
     else if(phone.match(letters)&& (phone.length==10)){
         phonespan.innerHTML="";
-        return true;
+        ph= true;
     }
     else if(phone.length<10)
         {
             if(phone.match(letters))
             {
                 phonespan.innerHTML="Enter minimum 10 numbers";
-                return false;
+                ph= false;
 
             }
             else
             {
                 phonespan.innerHTML="Use only numbers";
-                return false;
+                ph= false;
             }
 
             
@@ -51,12 +51,12 @@ function phoneValidation(){
         if(phone.match(letters))
         {
             phonespan.innerHTML="Enter maximum 10 numbers";
-            return false;
+            ph= false;
         }
         else
         {
             phonespan.innerHTML="Use only numbers";
-            return false;
+            ph= false;
         }
     
         
@@ -64,7 +64,7 @@ function phoneValidation(){
 
     else{
         phonespan.innerHTML="invalid number";
-        return false;
+        ph=false;
     }
 }
 
