@@ -149,6 +149,10 @@ $('.navbar-collapse a').click(function(){
 
             }
         })
-    }else{alert("Error")
+    }else{
+        nameValidation()
+        phoneValidation()
+        emailValidation()
+        commentValidation()
     }
     })
