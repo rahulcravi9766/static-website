@@ -24,7 +24,7 @@ function nameValidation() {
       name1= true;
   }
   else {
-      namespan.innerHTML = "use only characters";
+      namespan.innerHTML = "Use only characters";
       name1= false;
   }
 }
