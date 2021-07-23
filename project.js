@@ -8,6 +8,17 @@ function nameValidation() {
       namespan.innerHTML = "Field is required"
       name1= false;
   }
+
+  else if(name.length<3){
+    namespan.innerHTML = "Minimum 3 characters required"
+    name1= false;
+}
+
+   else if(name.length>30){
+    namespan.innerHTML = "30 characters maximum"
+       name1= false;
+   }
+
   else if (name.match(letters)) {
       namespan.innerHTML = "";
       name1= true;
@@ -97,6 +108,15 @@ function commentValidation() {
       msg= false;
   }
 
+  else if(name.length<10){
+    commentspan.innerHTML = "Minimum 10 characters required"
+    msg= false;
+}
+
+   else if(name.length>200){
+       commentspan.innerHTML = "200 characters maximum"
+       msg= false;
+   }
 
   else {
       commentspan.innerHTML = "";
