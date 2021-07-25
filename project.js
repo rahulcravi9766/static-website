@@ -1,125 +1,124 @@
 var name1, msg, ph, mail;
 
-function nameValidation() {
-  var name = document.getElementById("nametext").value
-  var namespan = document.getElementById("namespan");
-  var letters = /^[-a-zA-Z-()]+(\s+[-a-zA-Z-()]+)*$/;
-  if (name == "") {
-      namespan.innerHTML = "Field is required"
-      name1= false;
-  }
 
-  else if(name.length<3){
-    namespan.innerHTML = "Minimum 3 characters required"
-    name1= false;
-}
+function nameValidation(){
+	var namevalue=$('#nametext').val()
+	var letters = /^[-a-zA-Z-()]+(\s+[-a-zA-Z-()]+)*$/
+	if(namevalue==""){
+		$("#name-alert").html("Field is required")
+		name1= false
+	}
+	else if(namevalue==" "){
+		$('#name-alert').html("Do not enter space as first character")
+		name1=false
+	}
+	else if(namevalue.length < 3)
+	{
+	     $('#name-alert').html("Minimum 3 characters required");
+         name1=false;
+    	}
 
-   else if(name.length>30){
-    namespan.innerHTML = "30 characters maximum"
-       name1= false;
-   }
 
-  else if (name.match(letters)) {
-      namespan.innerHTML = "";
-      name1= true;
-  }
-  else {
-      namespan.innerHTML = "Use only characters";
-      name1= false;
-  }
-}
+        else if(namevalue.length>20){
+            $('#name-alert').html("20 characters maximum");
+            name1= false;
+        }
+     
+        else if(namevalue.match(letters)){
+            $('#name-alert').html("")
+            name1=true
+        }
+        else{
+            $('#name-alert').html("Please enter a valid name")
+            name1=false
+        }
+        }
 
 function phoneValidation(){
-    var phone=document.getElementById("phonetext").value 
-    var phonespan=document.getElementById("phonespan");
-    var letters= /^\d+$/;
-    
-    if(phone==""){
-        phonespan.innerHTML="Filed is required"
-        ph =false;}
-    else if(phone.match(letters)&& (phone.length==10)){
-        phonespan.innerHTML="";
-        ph= true;
-    }
-    else if(phone.length<10)
+	var namevalue=$('#phonetel').val()
+	var letters = /^\d+$/;
+	if(namevalue==""){
+		$('#phone-alert').html("Field is required")
+		ph= false
+	}
+	else if(namevalue.match(letters) && ( namevalue.length == 10))
+	{
+    console.log("jndf")
+    	$("#phone-alert").html("")
+        ph= true
+	}
+  else if(namevalue.length<10)
         {
-            if(phone.match(letters))
+            if(namevalue.match(letters))
             {
-                phonespan.innerHTML="Enter minimum 10 numbers";
-                ph= false;
+              $("#phone-alert").html("Type ten numbers")
+              ph= false;
 
             }
             else
             {
-                phonespan.innerHTML="Use only numbers";
-                ph= false;
+              $("#phone-alert").html("Use only numbers")
+              ph=false;
             }
-
-            
-        }
-    else if(phone.length>10)
+         }
+    else if(namevalue.length>10)
     {
-        if(phone.match(letters))
+        if(namevalue.match(letters))
         {
-            phonespan.innerHTML="Enter maximum 10 numbers";
-            ph= false;
+          $("#phone-alert").html("Only ten numbers allowed")
+          ph=false;
         }
         else
         {
-            phonespan.innerHTML="Use only numbers";
-            ph= false;
+          $("#phone-alert").html("Use only numbers")
+          ph= false;
         }
     
-        
     }
-
     else{
-        phonespan.innerHTML="invalid number";
-        ph=false;
+      $("#phone-alert").html("Invalid number")
+      ph=false;
     }
+  }
+
+function emailValidation(){
+    var emailvalue =$('#emailaddress').val()
+    var letters = /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
+    if(emailvalue==""){
+        $('#email-alert').html("Filed is required")
+        mail=false;
+    }
+    else if(emailvalue.match(letters)){
+        $('#email-alert').html("")
+        mail=true;
+    }
+    else{
+        $('#email-alert').html("Invalid Entry")
+        mail=false;
+    }
+
 }
 
+function commentValidation(){
+  var namevalue = $('#commenttext').val()
 
-function emailValidation() {
-  var name = document.getElementById("emailaddress").value
-  var emailspan = document.getElementById("emailspan");
-  var letters = /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
-  if (name == "") {
-      emailspan.innerHTML = "Filed is required"
-      mail =false;
-  }
-  else if (name.match(letters)) {
-      emailspan.innerHTML = "";
-      mail =true;
-  }
-  else {
-      emailspan.innerHTML = "invalid email";
-      mail= false;
-  }
-
-}
-
-function commentValidation() {
-  var name = document.getElementById("commenttext").value
-  var commentspan = document.getElementById("commentspan");
-
-  if (name == "") {
-      commentspan.innerHTML = "Filed is required"
+  if (namevalue == "") {
+    $('#comment-alert').html("Field is required")
       msg= false;
   }
 
-  else if(name.length<10){
-    commentspan.innerHTML = "Minimum 10 characters required"
+  else if(namevalue.length<10){
+    $('#comment-alert').html("Enter minimum 10 characters")
     msg= false;
 }
 
-   else if(name.length>200){
-       commentspan.innerHTML = "200 characters maximum"
+   else if(namevalue.length>150){
+    $('#comment-alert').html("200 characters maximum")
        msg= false;
    }
 
   else {
-      commentspan.innerHTML = "";
+    $('#comment-alert').html("")
       msg= true;
   }
 

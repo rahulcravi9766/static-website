@@ -140,19 +140,19 @@
             <div class="row">
                 <div class="col-md-7 col-md-offset-2">
                     <div class="form-bg">
-                        <form class="form"  id="submit-form" action="">
-                            <div class="form-group"> <label>First Name</label> <input id="nametext" name="Name"   onkeyup="nameValidation()"  type="text" class="form-control" placeholder="First Name">
-                            <p style="color: red;" id="namespan"> </p> </div>
-                            <div class="form-group"> <label>Phone Number</label> <input id="phonetext" name="Phone Number"  onkeyup="phoneValidation()" oninput="this.value=this.value.replace(/[^\d]/,'')" onkeypress="notallowed()" type="tel" class="form-control"  placeholder="phone number">
-                                <p style="color: red;" id="phonespan"></p> </div>
-                            <div class="form-group"> <label>Email</label> <input id="emailaddress" name="Email"  onkeyup="emailValidation()" type="email" class="form-control"  placeholder="Email Address">
-                            <p style="color: red; " id="emailspan"> </p> </div>
-                            <div class="form-group"> <label>Comment</label> <textarea class="form-control"rows="7" id="commenttext" name="Comment" onkeyup="commentValidation()" placeholder="Write message"></textarea> 
-                            <p style="color: red;" id="commentspan"> </p></div> 
-                           
-                            <button  type="submit" class="text-center btn btn-primary">Send Message</button>
-                            
-                        </form>
+                      <form class="form"  id="submit-form" action="">
+                        <div class="form-group"> <label>First Name</label> <input id="nametext" name="Name"  oninput="this.value=this.value.replace(/[^A-Za-z,.;'&/.() ]|^ /g,'')"   onkeyup="nameValidation()"  type="text" class="form-control" placeholder="First Name">
+                        <p style="color: red;" id="name-alert"> </p> </div>
+                        <div class="form-group"> <label>Phone Number</label> <input id="phonetel" name="Phone Number" onkeyup="phoneValidation()" maxlength="10" oninput="this.value=this.value.replace(/[^\d]/,'')" onkeypress="notallowed()" type="tel" class="form-control"  placeholder="phone number">
+                            <p style="color: red;" id="phone-alert"></p> </div>
+                        <div class="form-group"> <label>Email</label> <input id="emailaddress" name="Email"  oninput="this.value=this.value.replace(/\s/g, '')" onkeyup="emailValidation()" type="text" class="form-control"  placeholder="Email Address">
+                        <p style="color: red; " id="email-alert"> </p> </div>
+                        <div class="form-group"> <label>Comment</label> <textarea class="form-control"rows="7" id="commenttext" name="Comment"  oninput="this.value=this.value.replace(/[^A-Za-z,.;'&/.() ]|^ /g,'')" onkeyup="commentValidation()" placeholder="Write message"></textarea> 
+                        <p style="color: red;" id="comment-alert"> </p></div> 
+                       
+                        <button  type="submit" class="text-center btn btn-primary">Send Message</button>
+                        
+                    </form>
                     </div>
                 </div>
             </div>
